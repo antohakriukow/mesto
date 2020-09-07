@@ -6,3 +6,7 @@
   right: -46px;
   cursor: pointer;
 }
+
+.popup__close-btn:hover {
+  opacity: 0.6;
+}
