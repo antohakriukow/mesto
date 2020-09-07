@@ -1,0 +1,26 @@
+.user__edit-btn {
+  background-image: url('../../../images/edit-btn_24px.svg');
+  background-color: transparent;
+  background-repeat: no-repeat;
+  margin-left: 26px;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.user__edit-btn:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .user__edit-btn {
+    background-image: url('../../../images/edit-btn_18px.svg');
+    margin-left: 10px;
+    width: 18px;
+    height: 18px;
+  }
+}

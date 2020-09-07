@@ -1,0 +1,29 @@
+.card__add-btn {
+  display: block;
+  position: absolute;
+  background-image: url(../../../images/add-btn_150px.png);
+  width: 150px;
+  height: 50px;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+  background-color: transparent;
+  right: 0;
+  transform: translateY(-135px);
+}
+
+.card__add-btn:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media (max-width: 622px) {
+  .card__add-btn {
+    background-image: url(../../../images/add-btn_282px.png);
+    width: 282px;
+    position: relative;
+    transform: translateY(0);
+    margin: auto;
+    margin-bottom: 36px;
+  }
+}

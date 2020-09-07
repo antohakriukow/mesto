@@ -1,0 +1,10 @@
+.user__description {
+  padding-left: 26px;
+}
+
+@media (max-width: 622px) {
+  .user__description {
+    padding: 0;
+    margin: auto;
+  }
+}

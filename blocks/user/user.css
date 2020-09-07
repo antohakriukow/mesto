@@ -1,0 +1,16 @@
+.user {
+  padding-top: 36px;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: row;
+  max-width: 882px;
+}
+
+@media (max-width: 622px) {
+  .user {
+    padding-top: 38px;
+    padding-bottom: 36px;
+    flex-direction: column;
+    align-items: center;
+  }
+}

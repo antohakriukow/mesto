@@ -1,0 +1,18 @@
+.user__about {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .user__about {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+}
