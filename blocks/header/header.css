@@ -3,4 +3,7 @@
   max-width: 882px;
   padding-left: 19px;
   padding-right: 19px;
+  border: 1px;
+  border-style: none none solid none;
+  border-color: #545454;
 }

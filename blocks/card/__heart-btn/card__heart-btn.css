@@ -1,0 +1,14 @@
+.card__heart-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  height: 19px;
+  width: 21px;
+  cursor: pointer;
+}
+
+.card__heart-btn:hover {
+  opacity: 0.6;
+}

@@ -9,11 +9,20 @@ let popupAboutInput = popupSection.querySelector('.popup__input-field_about');
 let popupForm = popupSection.querySelector('.popup__input-container');
 let popupCloseBtn = popupSection.querySelector ('.popup__close-btn');
 
-const popupSwitch = () => {
-  popupSection.classList.toggle('popup_opened');
+console.log(userName.textContent);
+console.log(userAbout.textContent);
+
+function popupSwitch() {
+  if (popupSection.classList.contains('popup_opened') === false) {
+    popupNameInput.value = userName.textContent;
+    popupAboutInput.value = userAbout.textContent;
+    popupSection.classList.toggle('popup_opened');
+  } else {
+    popupSection.classList.toggle('popup_opened');
+  }
 }
 
-const formSubmitHandler = (evt) => {
+function formSubmitHandler(evt) {
   evt.preventDefault();
 
   userName.textContent = popupNameInput.value;

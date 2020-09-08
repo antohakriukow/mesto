@@ -5,9 +5,11 @@
   line-height: 17px;
   box-sizing: border-box;
   margin: 30px 0 0;
-  padding: 0;
-  border: none;
+  padding: 0 0 12px;
   width: 100%;
+  border: 1px;
+  border-style: none none solid none;
+  border-color: rgba(84, 84, 84, 0.2);
 }
 
 .popup__input-field:first-of-type {

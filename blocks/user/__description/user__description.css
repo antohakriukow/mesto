@@ -1,10 +1,18 @@
 .user__description {
   padding-left: 26px;
+  max-width: 922px;
+}
+
+@media (max-width: 922px) {
+  .user__description {
+    width: 50%;
+  }
 }
 
 @media (max-width: 622px) {
   .user__description {
     padding: 0;
     margin: auto;
+    width: 282px;
   }
 }

@@ -1,0 +1,27 @@
+.user__add-btn {
+  background-image: url(../../../images/add-btn_150px.svg);
+  width: 150px;
+  height: 50px;
+  border: 0;
+  padding: 0;
+  margin-left: auto;
+  box-shadow: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.user__add-btn:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 622px) {
+  .user__add-btn {
+    background-image: url(../../../images/add-btn_282px.svg);
+    width: 282px;
+    position: relative;
+    transform: translateY(0);
+    margin: auto;
+    margin-bottom: 36px;
+    margin-top: 36px;
+  }
+}
