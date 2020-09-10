@@ -18,8 +18,6 @@
   .user__add-btn {
     background-image: url(../../../images/add-btn_282px.svg);
     width: 282px;
-    position: relative;
-    transform: translateY(0);
     margin: auto;
     margin-bottom: 36px;
     margin-top: 36px;
