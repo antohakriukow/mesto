@@ -43,3 +43,52 @@
 @import url(../blocks/popup/__submit-btn/popup__submit-btn.css);
 @import url(../blocks/popup/__close-btn/popup__close-btn.css);
 @import url(../blocks/popup/__close-img/popup__close-img.css);
+
+/* .popup__title_user-window {
+  display: none;
+}
+
+.popup__title_place-window {
+  display: none;
+}
+
+.popup__input-field_user-window {
+  display: none;
+}
+
+.popup__input-field_place-window {
+  display: none;
+
+} */
+
+.popup__input-field_place-name {
+
+}
+
+.popup__input-field_place-url {
+
+}
+
+.show {
+  display: block;
+}
+
+.card__trash-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+
+.card__trash-btn:hover {
+  opacity: 0.6;
+}
+
+.card__trash-img {
+  
+}
