@@ -36,18 +36,29 @@
         </section>
 
 
-        <div class="popup">
+        <div class="popup popup_user">
           <div class="popup__container">
             <button class="popup__close-btn" type="button"><img src="./images/popup_close-btn.svg" alt="Закрыть попап" class="popup__close-img"></button>
             <div class="popup__content">
-              <h2 class="popup__title popup__title_user-window">Редактировать профиль</h2>
+              <h2 class="popup__title">Редактировать профиль</h2>
+              <form class="popup__input-container" name="popup">
+                <input class="popup__input-field popup__input-field_name" type="text" name="name" value="" placeholder="Имя">
+                <input class="popup__input-field popup__input-field_about" type="text" name="about" value="" placeholder="О себе">
+                <button class="popup__submit-btn popup_user" type="submit" value="Сохранить">Сохранить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup popup_place">
+          <div class="popup__container">
+            <button class="popup__close-btn" type="button"><img src="./images/popup_close-btn.svg" alt="Закрыть попап" class="popup__close-img"></button>
+            <div class="popup__content">
               <h2 class="popup__title popup__title_place-window">Новое место</h2>
               <form class="popup__input-container" name="popup">
-                <input class="popup__input-field popup__input-field_user-window popup__input-field_name" type="text" name="name" value="" placeholder="Имя">
-                <input class="popup__input-field popup__input-field_user-window popup__input-field_about" type="text" name="about" value="" placeholder="О себе">
                 <input class="popup__input-field popup__input-field_place-window popup__input-field_place-name" type="text" name="place-name" value="" placeholder="Название">
                 <input class="popup__input-field popup__input-field_place-window popup__input-field_place-url" type="text" name="place-url" value="" placeholder="Ссылка на картинку">
-                <button class="popup__submit-btn" type="submit" value="Сохранить">Сохранить</button>
+                <button class="popup__submit-btn popup_place" type="submit" value="Сохранить">Сохранить</button>
               </form>
             </div>
           </div>

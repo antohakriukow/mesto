@@ -10,7 +10,7 @@
   border: 1px;
   border-style: none none solid none;
   border-color: rgba(84, 84, 84, 0.2);
-  display: none;
+  display: flex;
 }
 
 .popup__input-field:first-of-type {

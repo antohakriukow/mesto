@@ -5,5 +5,5 @@
   margin: 0;
   padding: 34px 0 0;
   width: 100%;
-  display: none;
+  display: flex;
 }
