@@ -32,60 +32,11 @@
         <section class="photo-grid">
           <ul class="card-items">
 
-            <li class="card">
-              <img src="./images/card_karachaevsk.jpg" alt="Карачаевск" class="card__img">
-              <button class="card__trash-btn" type="button"><img class="card__trash-img" src="./images/trash-img.svg" alt="Удалить карточку"></button>
-              <div class="card__footer">
-                <h3 class="card__title">Карачаевск</h3>
-                <button class="card__heart-btn" type="button"><img src="./images/heart.svg" alt="сердце" class="card__heart-img"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img src="./images/card_elbrus.jpg" alt="Гора Эльбрус" class="card__img">
-              <div class="card__footer">
-                <h3 class="card__title">Гора Эльбрус</h3>
-                <button class="card__heart-btn" type="button"><img src="./images/heart.svg" alt="сердце" class="card__heart-img"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img src="./images/card_dombai.jpg" alt="Домбай" class="card__img">
-              <div class="card__footer">
-                <h3 class="card__title">Домбай</h3>
-                <button class="card__heart-btn" type="button"><img src="./images/heart.svg" alt="сердце" class="card__heart-img"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img src="./images/card_elbrus.jpg" alt="Гора Эльбрус" class="card__img">
-              <div class="card__footer">
-                <h3 class="card__title">Гора Эльбрус</h3>
-                <button class="card__heart-btn" type="button"><img src="./images/heart.svg" alt="сердце" class="card__heart-img"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img src="./images/card_dombai.jpg" alt="Домбай" class="card__img">
-              <div class="card__footer">
-                <h3 class="card__title">Домбай</h3>
-                <button class="card__heart-btn" type="button"><img src="./images/heart.svg" alt="сердце" class="card__heart-img"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img src="./images/card_karachaevsk.jpg" alt="Карачаево-Черкессия" class="card__img">
-              <div class="card__footer">
-                <h3 class="card__title">Карачаево-Черкессия</h3>
-                <button class="card__heart-btn" type="button"><img src="./images/heart.svg" alt="сердце" class="card__heart-img"></button>
-              </div>
-            </li>
-
           </ul>
         </section>
 
 
-        <section class="popup">
+        <div class="popup">
           <div class="popup__container">
             <button class="popup__close-btn" type="button"><img src="./images/popup_close-btn.svg" alt="Закрыть попап" class="popup__close-img"></button>
             <div class="popup__content">
@@ -100,7 +51,17 @@
               </form>
             </div>
           </div>
-        </section>
+        </div>
+        
+        <div class="fullscreen-popup">
+          <div class="fullscreen-popup__container">
+            <button class="popup__close-btn" type="button"><img src="./images/popup_close-btn.svg" alt="Закрыть попап" class="popup__close-img"></button>
+            <div class="fullscreen-popup__content">
+              <img class="fullscreen-popup__img" src='#' alt ='Картинка в полноэкранном режиме'>
+              <h2 class="fullscreen-popup__title">Заголовок в полноэкранном режиме</h2>
+            </div>
+          </div>
+        </div>
 
 
       </main>
@@ -110,7 +71,7 @@
   </div>
   <template class="card-template">
     <li class="card">
-      <img src="" alt="" class="card__img">
+      <img class="card__img">
       <button class="card__trash-btn" type="button"><img class="card__trash-img" src="./images/trash-img.svg" alt="Удалить карточку"></button>
       <div class="card__footer">
         <h3 class="card__title"></h3>

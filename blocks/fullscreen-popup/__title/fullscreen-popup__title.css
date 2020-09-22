@@ -1,0 +1,10 @@
+.fullscreen-popup__title {
+  display: block;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0 0;
+  color: rgba(255, 255, 255, 1);
+}

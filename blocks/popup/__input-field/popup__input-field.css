@@ -17,10 +17,6 @@
   margin: 54px 0 0;
 }
 
-input::-moz-placeholder { 
-  color: #000000;
-}
-
-input::-webkit-input-placeholder {
-  color: #000000;
+.popup__input-field:nth-of-type(3) {
+  margin: 54px 0 0;
 }

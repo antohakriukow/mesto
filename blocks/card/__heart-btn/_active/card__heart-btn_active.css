@@ -1,0 +1,4 @@
+.card__heart-btn_active {
+  opacity: 1;
+  background: url(../../../../images/heart_active.svg) center no-repeat;
+}
