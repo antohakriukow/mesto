@@ -1,0 +1,9 @@
+.popup__input-field-error {
+  width: 358px;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(255,0,0,1);
+  opacity: 0;
+  left: 0;
+  transition: opacity 0.3s;
+}

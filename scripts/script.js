@@ -89,12 +89,14 @@ function userPopupOpen() {
   popupAboutInput.value = userAbout.textContent;
   document.querySelector('.body').classList.add('body_noscroll');
   userPopup.classList.add('popup_opened');
+  document.addEventListener('keydown', popupCloseWithEscBtn);
 }
 
 // Открытие попапа Place
 function placePopupOpen() {
   document.querySelector('.body').classList.add('body_noscroll');
   placePopup.classList.add('popup_opened');
+  document.addEventListener('keydown', popupCloseWithEscBtn);
 }
 
 // Открытие попапа Fullscreen
@@ -108,6 +110,7 @@ function FullscreenPopupOpen(evt) {
     document.querySelector('.fullscreen-popup__title').innerText = clickedPlace;
   }
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', popupCloseWithEscBtn);
 }
 
 // Закрытие попапов
@@ -116,6 +119,22 @@ function popupClose() {
   placePopup.classList.remove('popup_opened');
   fullscreenPopup.classList.remove('popup_opened');
   document.querySelector('.body').classList.remove('body_noscroll');
+  document.removeEventListener('keydown', popupCloseWithEscBtn);
+}
+
+// Закрытие попапов с помощью Esc
+function popupCloseWithEscBtn(evt) {
+  if (evt.key === 'Escape') {
+    popupClose();
+  }
+}
+
+// Закрытие попапов при клике на оверлэй
+function popupCloseByClickOnOverlay(evt) {
+  if (evt.target !== evt.currentTarget) {
+    return;
+  }
+  popupClose();
 }
 
 // Обработчик User
@@ -145,4 +164,8 @@ function setListeners() {
   document.querySelectorAll('.popup__close-btn').forEach((btn) => {
     btn.addEventListener('click', popupClose);
   });
+  
+  userPopup.addEventListener('click', popupCloseByClickOnOverlay);
+  placePopup.addEventListener('click', popupCloseByClickOnOverlay);
+  fullscreenPopup.addEventListener('click', popupCloseByClickOnOverlay);
 }
