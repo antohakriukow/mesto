@@ -1,21 +1,21 @@
 // Показать сообщение об ошибке
 function showInputError(formElement, inputElement, errorMessage) {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  const errurInput = errorElement.previousElementSibling;
+  const errorInput = errorElement.previousElementSibling;
 
   errorElement.textContent = errorMessage;
   errorElement.classList.add('popup__input-field-error_active');
-  errurInput.classList.add('popup__input-field_error');
+  errorInput.classList.add('popup__input-field_error');
 };
 
 // Скрыть сообщение об ошибке
 function hideInputError(formElement, inputElement) {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-  const errurInput = errorElement.previousElementSibling;
+  const errorInput = errorElement.previousElementSibling;
 
   errorElement.textContent = '';
   errorElement.classList.remove('popup__input-field-error_active');
-  errurInput.classList.remove('input-field_error');
+  errorInput.classList.remove('popup__input-field_error');
 };
 
 // Функция валидации
