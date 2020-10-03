@@ -62,11 +62,11 @@ function renderItem(card) {
   htmlElement.querySelector('.card__title').innerText = card.name;
   htmlElement.querySelector('.card__img').setAttribute('src', card.link);
   htmlElement.querySelector('.card__img').setAttribute('alt', card.name);
+  
+  htmlElement.querySelector('.card__trash-btn').addEventListener('click', deleteCard);
+  htmlElement.querySelector('.card__heart-btn').addEventListener('click', likeCard);
+  htmlElement.querySelector('.card__img').addEventListener('click', openFullscreenPopup);
   cardArea.prepend(htmlElement);
-
-  document.querySelector('.card__trash-btn').addEventListener('click', deleteCard);
-  document.querySelector('.card__heart-btn').addEventListener('click', likeCard);
-  document.querySelector('.card__img').addEventListener('click', fullscreenPopupOpen);
 }
 
 // Удаление карточки
@@ -80,26 +80,26 @@ function likeCard(evt) {
 }
 
 // Функция открытия попапа
-function popupOpen(popup) {
+function openPopup(popup) {
   document.querySelector('.body').classList.add('body_noscroll');
   popup.classList.add('popup_opened');
-  document.addEventListener('keydown', popupCloseWithEscBtn);
+  document.addEventListener('keydown', closePopupWithEscBtn);
 }
 
 // Открытие попапа User
-function userPopupOpen() {
+function openUserPopup() {
   popupNameInput.value = userName.textContent;
   popupAboutInput.value = userAbout.textContent;
-  popupOpen(userPopup);
+  openPopup(userPopup);
 }
 
 // Открытие попапа Place
-function placePopupOpen() {
-  popupOpen(placePopup);
+function openPlacePopup() {
+  openPopup(placePopup);
 }
 
 // Открытие попапа Fullscreen
-function fullscreenPopupOpen(evt) {
+function openFullscreenPopup(evt) {
   const clickedImg = evt.target.getAttribute('src');
   const clickedPlace = evt.target.getAttribute('alt');
   if (fullscreenPopup.classList.contains('popup_opened') === false) {
@@ -107,29 +107,29 @@ function fullscreenPopupOpen(evt) {
     fullscreenPopup.querySelector('.fullscreen-popup__img').setAttribute('alt', clickedPlace);
     fullscreenPopup.querySelector('.fullscreen-popup__title').innerText = clickedPlace;
   }
-  popupOpen(fullscreenPopup);
+  openPopup(fullscreenPopup);
 }
 
 // Закрытие попапов
-function popupClose() {
+function closePopup() {
   popups.forEach((popup) => {popup.classList.remove('popup_opened')});
   document.querySelector('.body').classList.remove('body_noscroll');
-  document.removeEventListener('keydown', popupCloseWithEscBtn);
+  document.removeEventListener('keydown', closePopupWithEscBtn);
 }
 
 // Закрытие попапов с помощью Esc
-function popupCloseWithEscBtn(evt) {
+function closePopupWithEscBtn(evt) {
   if (evt.key === 'Escape') {
-    popupClose();
+    closePopup();
   }
 }
 
 // Закрытие попапов при клике на оверлэй
-function popupCloseByClickOnOverlay(evt) {
+function closePopupByClickOnOverlay(evt) {
   if (evt.target !== evt.currentTarget) {
     return;
   }
-  popupClose();
+  closePopup();
 }
 
 // Обработчик User
@@ -137,7 +137,7 @@ function userFormSubmitHandler(evt) {
   evt.preventDefault();
   userName.textContent = popupNameInput.value;
   userAbout.textContent = popupAboutInput.value;
-  popupClose();
+  closePopup();
 }
 
 // Обработчик Place
@@ -147,20 +147,20 @@ function placeFormSubmitHandler(evt) {
   const link = popupPlaceUrlInput.value;   
   initialCards.unshift({name, link});
   renderItem(initialCards[0]);
-  popupClose();
+  closePopup();
 }
 
 // Listeners
 function setListeners() {
-  userEditBtn.addEventListener('click', userPopupOpen);
-  placeAddBtn.addEventListener('click', placePopupOpen);
+  userEditBtn.addEventListener('click', openUserPopup);
+  placeAddBtn.addEventListener('click', openPlacePopup);
   userPopup.querySelector('.popup__input-container').addEventListener('submit', userFormSubmitHandler);
   placePopup.querySelector('.popup__input-container').addEventListener('submit', placeFormSubmitHandler);
   document.querySelectorAll('.popup__close-btn').forEach((btn) => {
-    btn.addEventListener('click', popupClose);
+    btn.addEventListener('click', closePopup);
   });
   
-  userPopup.addEventListener('click', popupCloseByClickOnOverlay);
-  placePopup.addEventListener('click', popupCloseByClickOnOverlay);
-  fullscreenPopup.addEventListener('click', popupCloseByClickOnOverlay);
+  userPopup.addEventListener('click', closePopupByClickOnOverlay);
+  placePopup.addEventListener('click', closePopupByClickOnOverlay);
+  fullscreenPopup.addEventListener('click', closePopupByClickOnOverlay);
 }
