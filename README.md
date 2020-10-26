@@ -7,6 +7,7 @@
 * flexbox;
 * grid layout;
 * media queries;
+* oop;
 * bem;
 * js.
 
