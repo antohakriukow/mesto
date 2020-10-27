@@ -34,8 +34,9 @@ export function openFullscreenPopup(evt) {
   const clickedImg = evt.target.getAttribute('src')
   const clickedPlace = evt.target.getAttribute('alt')
   if (!config.fullscreenPopup.classList.contains('popup_opened')) {
-    config.fullscreenPopup.querySelector('.fullscreen-popup__img').setAttribute('src', clickedImg)
-    config.fullscreenPopup.querySelector('.fullscreen-popup__img').setAttribute('alt', clickedPlace)
+    const img = config.fullscreenPopup.querySelector('.fullscreen-popup__img')
+    img.setAttribute('src', clickedImg)
+    img.setAttribute('alt', clickedPlace)
     config.fullscreenPopup.querySelector('.fullscreen-popup__title').innerText = clickedPlace
   }
   openPopup(config.fullscreenPopup)

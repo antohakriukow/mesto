@@ -31,11 +31,11 @@ class Card {
 
   getElement() {
     this._element = this._getTemplate();
-    const _img = this._element.querySelector('.card__img')
+    const img = this._element.querySelector('.card__img')
 
     this._element.querySelector('.card__title').innerText = this._name;
-    _img.setAttribute('src', this._link);
-    _img.setAttribute('alt', this._name);
+    img.setAttribute('src', this._link);
+    img.setAttribute('alt', this._name);
 
     this._setListeners();
 
