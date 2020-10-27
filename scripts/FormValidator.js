@@ -1,26 +1,23 @@
 class FormValidator {
-  constructor (formSelector, config) {
+  constructor (config, formElement) {
     // this._formElement = formElement
-    this._formSelector = formSelector;
-    this._formElement = document.querySelector(formSelector)
+    this._formElement = formElement
     this._formInputErrorActiveClass = config.popupInputFieldErrorActive
     this._popupInputFieldError = config.popupInputFieldError
     this._popupSubmitBtnDisabled = config.popupSubmitBtnDisabled
-    this._formInputSelector = config.formInputSelector;
-    this._formSubmitSelector = config.formSubmitSelector;
+    this._formInputSelector = config.formInputSelector
+    this._formSubmitSelector = config.formSubmitSelector
   }
 
     // Показать сообщение об ошибке
   _showInputError(inputElement, errorMessage) {
     const errorElement = this._formElement.querySelector(`#${inputElement.id}-error`)
     const errorInput = errorElement.previousElementSibling
-    console.log(errorElement)
-    console.log(errorInput)
 
-    errorElement.textContent = errorMessage;
+    errorElement.textContent = errorMessage
     errorElement.classList.add(this._formInputErrorActiveClass)
     errorInput.classList.add(this._popupInputFieldError)
-  };
+  }
 
   // Скрыть сообщение об ошибке
   _hideInputError(inputElement) {
@@ -30,7 +27,7 @@ class FormValidator {
     errorElement.textContent = ''
     errorElement.classList.remove(this._formInputErrorActiveClass)
     errorInput.classList.remove(this._popupInputFieldError)
-  };
+  }
 
   // Функция валидации
   _checkInputValidity(inputElement) {
@@ -39,12 +36,12 @@ class FormValidator {
     } else {
       this._hideInputError(inputElement)
     }
-  };
+  }
 
   // Проверка на наличие невалидного поля 
   _hasInvalidInput(inputList) {
     return inputList.some((inputElement) => !inputElement.validity.valid)
-  };
+  }
 
   // Изменение состояния кнопки
   _toggleButtonState(inputList, buttonElement) {
@@ -73,13 +70,12 @@ class FormValidator {
   }
 
   enableValidation() {
-    const submitFormHandler = (evt) => {
-      evt.preventDefault();
-    };
-    this._formElement.addEventListener("submit", submitFormHandler);
+    const handleFormSubmit = (evt) => {
+      evt.preventDefault()
+    }
+    this._formElement.addEventListener("submit", handleFormSubmit)
 
-    this._setValidationEventListeners();
-    console.log(this._formElement)
+    this._setValidationEventListeners()
   }
 }
 

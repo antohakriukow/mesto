@@ -2,27 +2,27 @@ export const initialCards = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-},
-{
+  },
+  {
     name: 'Челябинская область',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-},
-{
+  },
+  {
     name: 'Иваново',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-},
-{
+  },
+  {
     name: 'Камчатка',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-},
-{
+  },
+  {
     name: 'Холмогорский район',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-},
-{
+  },
+  {
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-}
+  }
 ];
 
 export const config = {
@@ -50,11 +50,6 @@ export const config = {
   popupInputFieldError: 'popup__input-field_error',
   popupSubmitBtnDisabled: 'popup__submit-btn_disabled', //formInputErrorInactiveClass
 
-  formSelector: '.popup__input-container', //formSelector
   formInputSelector: '.popup__input-field', //formInputSelector
   formSubmitSelector: '.popup__submit-btn', //formSubmitSelector
-
-  userFormSelector: '.js-userform',
-  placeFormSelector: '.js-placeform',
-
 }
