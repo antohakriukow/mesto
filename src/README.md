@@ -9,7 +9,8 @@
 * media queries;
 * oop;
 * bem;
-* js.
+* js;
+* webpack.
 
 ### Ссылка на репозиторий
 https://github.com/antohakriukow/mesto/

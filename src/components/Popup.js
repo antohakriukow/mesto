@@ -8,7 +8,6 @@ export default class Popup {
 
   open() {
     body.classList.add('body_noscroll')
-    console.log(this._popup)
     this._popup.classList.add('popup_opened')
     document.addEventListener('keydown', this._handleEscClose)
   }

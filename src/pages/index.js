@@ -1,3 +1,4 @@
+import './index.css'
 import {initialCards} from '../utils/constants.js'
 import {config} from '../utils/utils.js'
 import Card from '../components/Card.js'
