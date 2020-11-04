@@ -1,12 +1,13 @@
 class FormValidator {
   constructor (config, formElement) {
-    // this._formElement = formElement
     this._formElement = formElement
     this._formInputErrorActiveClass = config.popupInputFieldErrorActive
     this._popupInputFieldError = config.popupInputFieldError
     this._popupSubmitBtnDisabled = config.popupSubmitBtnDisabled
     this._formInputSelector = config.formInputSelector
     this._formSubmitSelector = config.formSubmitSelector
+    this._inputFields = Array.from(formElement.querySelectorAll(config.formInputSelector));
+    this._submitBtn = formElement.querySelector(config.formSubmitSelector);
   }
 
     // Показать сообщение об ошибке
@@ -39,18 +40,18 @@ class FormValidator {
   }
 
   // Проверка на наличие невалидного поля 
-  _hasInvalidInput(inputList) {
-    return inputList.some((inputElement) => !inputElement.validity.valid)
+  _hasInvalidInput() {
+    return this._inputFields.some((inputElement) => !inputElement.validity.valid)
   }
 
   // Изменение состояния кнопки
-  _toggleButtonState(inputList, buttonElement) {
-    if (this._hasInvalidInput(inputList)) {
-      buttonElement.classList.add(this._popupSubmitBtnDisabled)
-      buttonElement.setAttribute('disabled', true)
+  toggleButtonState() {
+    if (this._hasInvalidInput()) {
+      this._submitBtn.classList.add(this._popupSubmitBtnDisabled)
+      this._submitBtn.setAttribute('disabled', true)
     } else {
-      buttonElement.classList.remove(this._popupSubmitBtnDisabled)
-      buttonElement.removeAttribute('disabled')
+      this._submitBtn.classList.remove(this._popupSubmitBtnDisabled)
+      this._submitBtn.removeAttribute('disabled')
     }
   }
 
@@ -62,11 +63,11 @@ class FormValidator {
     inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
         this._checkInputValidity(inputElement)
-        this._toggleButtonState(inputList, buttonElement)
+        this.toggleButtonState(inputList, buttonElement)
       })
     })
 
-    this._toggleButtonState(inputList, buttonElement)
+    this.toggleButtonState(inputList, buttonElement)
   }
 
   enableValidation() {
@@ -77,6 +78,8 @@ class FormValidator {
 
     this._setValidationEventListeners()
   }
+
 }
+
 
 export default FormValidator

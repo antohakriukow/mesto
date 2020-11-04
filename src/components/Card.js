@@ -7,11 +7,12 @@ export default class Card {
   }
 
   _getTemplate() {
-    return document.querySelector(this._selector).content.cloneNode(true).children[0]
+    return document.querySelector(this._selector).content.cloneNode(true).querySelector('.card')
   }
 
   _handleDelete() {
     this._element.remove()
+    this._element = null
   }
 
   _handleLike() {

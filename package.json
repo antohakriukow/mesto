@@ -32,12 +32,12 @@
     "mini-css-extract-plugin": "^1.2.1",
     "postcss": "^8.1.4",
     "postcss-loader": "^4.0.4",
+    "rimraf": "^3.0.2",
     "webpack": "^5.3.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "rimraf": "^3.0.2"
+    "core-js": "^3.6.5"
   }
 }

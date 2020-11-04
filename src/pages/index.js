@@ -64,6 +64,7 @@ const placePopupInstance = new PopupWithForm(config.placePopup, (evt, inputValue
 placePopupInstance.setEventListeners()
 
 function handlePlacePopupBtn() {
+  placeFormValidator.toggleButtonState()
   placePopupInstance.open()
 }
 
