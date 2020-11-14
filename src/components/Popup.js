@@ -35,4 +35,6 @@ export default class Popup {
     }
     this.close()
   }
+
+  showButton() {console.log(this._popup.querySelector('.popup__submit-btn').textContent)}
 }

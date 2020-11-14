@@ -13,8 +13,8 @@ export default class Section {
     this._container.innerHTML = ''
   }
 
-  renderItems() {
+  renderItems(data) {
     this.clear()
-    this._items.forEach(item => {this._renderer(item)})
+    data.reverse().forEach(item => {this._renderer(item)})
   }
 }
