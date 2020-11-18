@@ -11,15 +11,15 @@ import PopupWithBtn from '../components/PopupWithBtn.js'
 
 const cardOptions = {
 
-  handleCardClick: (name, link) => fullscreenPopupInstance.open(name, link),   //Callback-function for fullscreen popup
+  handleCardClick: (name, link) => fullscreenPopupInstance.open(name, link),
 
-  renderCards: () => {   //Rendering cards from server
+  renderCards: () => {
     api.getInitialCards()
       .then((data) => cardsList.renderItems(data))
       .catch((err) => console.log(err))
   },
 
-  addNewCard: (evt, inputValues) => {   //Adding new card
+  addNewCard: (evt, inputValues) => {
     evt.preventDefault()
     const card = {name: inputValues.place, link: inputValues.url,}
     api.addCard(card)
@@ -43,18 +43,7 @@ const cardOptions = {
 }
 
 const userOptions = {
-  getUserId: () => api.getUserData()   // Getting user ID from server
-    .then((data) => userId = data._id)
-    .catch((err) => console.log(err)),
-  
-  getUser: () => api.getUserData()   // Getting username & info about user from server
-    .then((data) => {
-      userInfo.setUserInfo(data.name, data.about)
-      userInfo.setUserAvatar(data.avatar)
-    })
-    .catch((err) => console.log(err)),
-
-  changeUser: (evt, inputValues) => {   // Change username & info about user on server & local
+  changeUser: (evt, inputValues) => {
     evt.preventDefault()
 
     showProcessing(true)
@@ -67,7 +56,7 @@ const userOptions = {
       .finally(() => showProcessing(false))
   },
 
-  handleUserPopupBtn: () => {   //Callback-function for user-popup
+  handleUserPopupBtn: () => {
     const userData = userInfo.getUserInfo()
     config.popupNameInput.value = userData.name
     config.popupAboutInput.value = userData.about
@@ -123,7 +112,7 @@ function handleDeleteButtonClick(card) {
 }
 
 
-const createCard = (item) => {   //Creating card method
+const createCard = (item) => {
   const card = new Card(item, config.cardTemplate, cardOptions, handleDeleteButtonClick, userId)
   const element = card.getElement()
   cardsList.addItem(element)
@@ -169,6 +158,14 @@ config.changeAvatarBtn.addEventListener('click', userOptions.handleAvatarBtn)
 
 
 let userId = ''
-userOptions.getUserId()
-cardOptions.renderCards()
-userOptions.getUser()
+
+Promise.all([api.getInitialCards(), api.getUserData()])
+  .then(([cards, data]) => {
+    userId = data._id
+
+    userInfo.setUserInfo(data.name, data.about)
+    userInfo.setUserAvatar(data.avatar)
+    
+    cardsList.renderItems(cards)
+  })
+  .catch((err) => console.log(err))
